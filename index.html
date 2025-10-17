@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экспозиция на первичном рынке</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            background: #ffffff;
+            color: #122a4b;
+            min-height: 100vh;
+            padding: 30px;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            color: #122a4b;
+            letter-spacing: 1px;
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .city-card {
+            background: #122a4b;
+            border-radius: 10px;
+            padding: 25px 15px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 70px;
+            border: 2px solid transparent;
+        }
+
+        .city-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(18, 42, 75, 0.25);
+            border-color: #122a4b;
+            background: #0d1f3a;
+        }
+
+        .city-name {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #122a4b;
+            font-size: 1rem;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1200px) {
+            .cities-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .cities-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .city-card {
+                padding: 20px 10px;
+                min-height: 100px;
+            }
+
+            .city-name {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Экспозиция на первичном рынке</h1>
+        </div>
+
+        <div class="cities-grid">
+            
+            <div class="city-card" onclick="openCityMap('vrn')">
+                <h3 class="city-name">Воронеж</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('prm')">
+                <h3 class="city-name">Пермь</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('nur')">
+                <h3 class="city-name">Новый Уренгой</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('nov')">
+                <h3 class="city-name">Нижний Новгород</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('lip')">
+                <h3 class="city-name">Липецк</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('kzn')">
+                <h3 class="city-name">Казань</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('kur')">
+                <h3 class="city-name">Курск</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('khm')">
+                <h3 class="city-name">Ханты-Мансийск</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('ekb')">
+                <h3 class="city-name">Екатеринбург</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('chl')">
+                <h3 class="city-name">Челябинск</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('tmn')">
+                <h3 class="city-name">Тюмень</h3>
+            </div>
+    
+            <div class="city-card" onclick="openCityMap('vrnoblast')">
+                <h3 class="city-name">Воронежская область</h3>
+            </div>
+    
+        </div>
+
+        <div class="footer">
+            Городов в аналитике: 12
+        </div>
+    </div>
+
+    <script>
+        function openCityMap(cityName) {
+            window.open('maps/' + cityName + '_map.html', '_blank');
+        }
+    </script>
+</body>
+</html>
